@@ -1,5 +1,7 @@
 import Taro from '@tarojs/taro'
 
+const windowWidth = Taro.getSystemInfoSync().windowWidth
+
 export const getFlag = () => {
   let flag
   switch (process.env.TARO_ENV) {
@@ -24,7 +26,7 @@ export const getFlag = () => {
 
 export const rpx2px = (value) => {
   if (typeof value === 'string') value = Number(value.replace(/[a-z]*/g, ''))
-  return Taro.getSystemInfoSync().windowWidth / 750 * value
+  return windowWidth / 750 * value
 }
 
 export const changeUnits = (value) => {
