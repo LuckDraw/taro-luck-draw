@@ -1,6 +1,6 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View, Canvas, CoverView, Image } from '@tarojs/components'
-import { LuckyGrid as Grid } from 'lucky-canvas'
+import { LuckyGrid as Grid } from 'lucky-canvas/dist/lucky-canvas.cjs.js'
 import { changeUnits, resolveImage, getFlag } from '../../utils'
 import '../../react/index.css'
 
