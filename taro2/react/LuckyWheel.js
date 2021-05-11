@@ -1,8 +1,8 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View, Canvas, CoverView, Image } from '@tarojs/components'
-import { LuckyWheel as Wheel } from 'lucky-canvas'
-import { changeUnits, resolveImage, getFlag } from '../utils'
-import './index.css'
+import { LuckyWheel as Wheel } from 'lucky-canvas/dist/lucky-canvas.cjs.js'
+import { changeUnits, resolveImage, getFlag } from '../../utils'
+import '../../react/index.css'
 
 export default class LuckyWheel extends Component {
   ctx = null
