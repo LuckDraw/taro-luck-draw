@@ -73,17 +73,17 @@ export const base64src = function(base64data) {
 
 export const resolveImage = async (res, img, imgName = 'src', resolveName = '$resolve') => {
   const src = img[imgName]
-  const $resolve = img[resolveName]
+  // const $resolve = img[resolveName]
   // 如果是base64就调用base64src()方法把图片写入本地, 然后渲染临时路径
   if (/^data:image\/([a-z]+);base64,/.test(src)) {
     const path = await base64src(src)
-    $resolve({ ...res.detail, path })
+    img[resolveName]({ ...res.detail, path })
     return
   }
   // 如果是网络图片, 则通过getImageInfo()方法获取图片宽高
   Taro.getImageInfo({
     src: src,
-    success: (imgObj) => $resolve(imgObj),
+    success: (imgObj) => img[resolveName](imgObj),
     fail: () => console.error('API `Taro.getImageInfo` 加载图片失败', src)
   })
 }
